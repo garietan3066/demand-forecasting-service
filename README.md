@@ -6,7 +6,11 @@ A portfolio project connecting time-series modeling with a containerized predict
 
 Implemented: synthetic daily demand generation, lag features (1, 7, 14, and 30 days), day-of-week and month features, a chronological 80/20 split, LightGBM training, WAPE reporting, and model serialization.
 
-Not implemented yet: API schemas and endpoints, automated tests, baseline comparisons, rolling validation, real-data ingestion, Docker packaging, and deployment. Files in `app/` are placeholders. This is a prototype, not yet a production-ready service.
+Implemented API contracts: `PredictionRequest` and `PredictionResponse` in `app/schemas.py`, with tests for valid inputs and rejection of malformed values. Demand accepts integer or fractional JSON numbers but rejects numeric strings, booleans, negative values, NaN, and infinity. Calendar values require integers, and unexpected fields are rejected. Responses require finite nonnegative demand and a nonblank model version.
+
+Not implemented yet: API endpoints, authentication, baseline comparisons, rolling validation, real-data ingestion, Docker packaging, and deployment. `app/main.py` remains a placeholder. This is a prototype, not yet a production-ready service.
+
+Run the schema tests with `python -m pytest tests/test_schemas.py`.
 
 The current experiment evaluates one-day-ahead predictions with observed historical demand. It does not evaluate a fixed-origin multiday forecast. Calendar features are currently integer values, not cyclical sine/cosine encodings.
 
