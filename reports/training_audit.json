@@ -1,0 +1,330 @@
+{
+  "dataset": "Dingdong-Inc/FreshRetailNet-50K",
+  "split": "train",
+  "cache_revision": "08c1fab7f9257bc73679d415d65d644165d351d4",
+  "sources": [
+    {
+      "file": "fresh_retail_net-50_k-train-00000-of-00005.arrow",
+      "sha256": "34271827877e2f568e8124214698c36126a2b693a2d668435c44651ce270130e"
+    },
+    {
+      "file": "fresh_retail_net-50_k-train-00001-of-00005.arrow",
+      "sha256": "5df205e987c78bf65f7c8a8cd83daaa1e856362a7433726a95209eaf8889561c"
+    },
+    {
+      "file": "fresh_retail_net-50_k-train-00002-of-00005.arrow",
+      "sha256": "dc78137a8a5b69251d3a079a6b10f44d55b3b44bc0da79ed20487b1b94127474"
+    },
+    {
+      "file": "fresh_retail_net-50_k-train-00003-of-00005.arrow",
+      "sha256": "2e9696e900b337a4f745ef965ce01e848c69268128dcd53d7a8e9ead0083cad3"
+    },
+    {
+      "file": "fresh_retail_net-50_k-train-00004-of-00005.arrow",
+      "sha256": "138fbef01596b161d156dba019e0415a8d555da21368de6f6bb20b6a8e2a92c8"
+    }
+  ],
+  "summary": {
+    "rows": 4500000,
+    "stores": 898,
+    "products": 865,
+    "store_product_series": 50000,
+    "date_min": "2024-03-28",
+    "date_max": "2024-06-25",
+    "duplicate_key_rows_beyond_first": 0,
+    "series_with_internal_missing_dates": 0,
+    "internal_missing_dates": 0,
+    "observations_per_series": {
+      "90": 50000
+    },
+    "series_start_dates": {
+      "2024-03-28": 50000
+    },
+    "series_end_dates": {
+      "2024-06-25": 50000
+    },
+    "sales_quantiles": {
+      "0.0": 0.0,
+      "0.25": 0.4,
+      "0.5": 0.7,
+      "0.75": 1.1,
+      "0.95": 2.9,
+      "0.99": 5.8,
+      "1.0": 44.9
+    },
+    "zero_sales_by_stockout": {
+      "no_stockout_06_22": {
+        "rows": 2507994,
+        "zero_sales_rows": 46944
+      },
+      "some_stockout_06_22": {
+        "rows": 1992006,
+        "zero_sales_rows": 153816
+      }
+    }
+  },
+  "checks": {
+    "daily_hourly_sales_mismatch": 0,
+    "discount_outside_0_1": 34,
+    "hours_checked_06_22": 72000000,
+    "invalid:activity_flag": 0,
+    "invalid:holiday_flag": 0,
+    "invalid_dates": 0,
+    "invalid_length:hours_sale": 0,
+    "invalid_length:hours_stock_status": 0,
+    "invalid_stock_flags": 0,
+    "invalid_stockout_count": 0,
+    "negative_daily_sales": 0,
+    "negative_hourly_sales": 0,
+    "nonfinite:activity_flag": 0,
+    "nonfinite:avg_humidity": 0,
+    "nonfinite:avg_temperature": 0,
+    "nonfinite:avg_wind_level": 0,
+    "nonfinite:city_id": 0,
+    "nonfinite:discount": 0,
+    "nonfinite:first_category_id": 0,
+    "nonfinite:holiday_flag": 0,
+    "nonfinite:management_group_id": 0,
+    "nonfinite:precpt": 0,
+    "nonfinite:product_id": 0,
+    "nonfinite:sale_amount": 0,
+    "nonfinite:second_category_id": 0,
+    "nonfinite:stock_hour6_22_cnt": 0,
+    "nonfinite:store_id": 0,
+    "nonfinite:third_category_id": 0,
+    "nonfinite_elements:hours_sale": 0,
+    "nonfinite_elements:hours_stock_status": 0,
+    "null:activity_flag": 0,
+    "null:avg_humidity": 0,
+    "null:avg_temperature": 0,
+    "null:avg_wind_level": 0,
+    "null:city_id": 0,
+    "null:discount": 0,
+    "null:dt": 0,
+    "null:first_category_id": 0,
+    "null:holiday_flag": 0,
+    "null:hours_sale": 0,
+    "null:hours_stock_status": 0,
+    "null:management_group_id": 0,
+    "null:precpt": 0,
+    "null:product_id": 0,
+    "null:sale_amount": 0,
+    "null:second_category_id": 0,
+    "null:stock_hour6_22_cnt": 0,
+    "null:store_id": 0,
+    "null:third_category_id": 0,
+    "null_elements:hours_sale": 0,
+    "null_elements:hours_stock_status": 0,
+    "positive_sales_hours_flagged_stockout": 772426,
+    "stock_count_mismatch_ones_06_22": 0,
+    "stock_count_mismatch_zeros_06_22": 4388182,
+    "stockout_hours_06_22": 14311536
+  },
+  "discount_outside_0_1_examples": [
+    {
+      "store_id": 293,
+      "product_id": 37,
+      "dt": "2024-04-03",
+      "discount": 1.042
+    },
+    {
+      "store_id": 293,
+      "product_id": 37,
+      "dt": "2024-04-10",
+      "discount": 1.088
+    },
+    {
+      "store_id": 293,
+      "product_id": 37,
+      "dt": "2024-04-21",
+      "discount": 1.019
+    },
+    {
+      "store_id": 293,
+      "product_id": 37,
+      "dt": "2024-04-25",
+      "discount": 1.088
+    },
+    {
+      "store_id": 293,
+      "product_id": 37,
+      "dt": "2024-05-21",
+      "discount": 1.088
+    },
+    {
+      "store_id": 326,
+      "product_id": 37,
+      "dt": "2024-04-28",
+      "discount": 1.088
+    },
+    {
+      "store_id": 326,
+      "product_id": 37,
+      "dt": "2024-05-03",
+      "discount": 1.059
+    },
+    {
+      "store_id": 326,
+      "product_id": 37,
+      "dt": "2024-05-04",
+      "discount": 1.059
+    },
+    {
+      "store_id": 326,
+      "product_id": 37,
+      "dt": "2024-05-05",
+      "discount": 1.088
+    },
+    {
+      "store_id": 326,
+      "product_id": 37,
+      "dt": "2024-05-07",
+      "discount": 1.088
+    },
+    {
+      "store_id": 326,
+      "product_id": 37,
+      "dt": "2024-05-12",
+      "discount": 1.088
+    },
+    {
+      "store_id": 529,
+      "product_id": 37,
+      "dt": "2024-04-13",
+      "discount": 1.088
+    },
+    {
+      "store_id": 529,
+      "product_id": 37,
+      "dt": "2024-04-17",
+      "discount": 1.059
+    },
+    {
+      "store_id": 529,
+      "product_id": 37,
+      "dt": "2024-05-12",
+      "discount": 1.033
+    },
+    {
+      "store_id": 529,
+      "product_id": 37,
+      "dt": "2024-05-18",
+      "discount": 1.088
+    },
+    {
+      "store_id": 529,
+      "product_id": 37,
+      "dt": "2024-05-20",
+      "discount": 1.088
+    },
+    {
+      "store_id": 529,
+      "product_id": 37,
+      "dt": "2024-05-23",
+      "discount": 1.088
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-04-04",
+      "discount": 1.088
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-04-08",
+      "discount": 1.088
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-04-16",
+      "discount": 1.044
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-04-20",
+      "discount": 1.05
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-04-25",
+      "discount": 1.043
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-04-26",
+      "discount": 1.088
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-04-29",
+      "discount": 1.088
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-05-02",
+      "discount": 1.065
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-05-18",
+      "discount": 1.07
+    },
+    {
+      "store_id": 608,
+      "product_id": 37,
+      "dt": "2024-05-19",
+      "discount": 1.07
+    },
+    {
+      "store_id": 614,
+      "product_id": 37,
+      "dt": "2024-04-08",
+      "discount": 1.088
+    },
+    {
+      "store_id": 614,
+      "product_id": 37,
+      "dt": "2024-04-12",
+      "discount": 1.07
+    },
+    {
+      "store_id": 614,
+      "product_id": 37,
+      "dt": "2024-04-18",
+      "discount": 1.088
+    },
+    {
+      "store_id": 614,
+      "product_id": 37,
+      "dt": "2024-04-26",
+      "discount": 1.059
+    },
+    {
+      "store_id": 614,
+      "product_id": 37,
+      "dt": "2024-05-04",
+      "discount": 1.088
+    },
+    {
+      "store_id": 611,
+      "product_id": 37,
+      "dt": "2024-05-23",
+      "discount": 1.05
+    },
+    {
+      "store_id": 611,
+      "product_id": 37,
+      "dt": "2024-05-24",
+      "discount": 1.02
+    }
+  ],
+  "method": "Local training shards only. Sales tolerance atol=rtol=1e-6; stock window indices [6:22]. Missing dates counted within each series span; endpoints reported separately. No cleaning or imputation performed."
+}

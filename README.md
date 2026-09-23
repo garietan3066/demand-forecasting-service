@@ -4,6 +4,8 @@ A portfolio project connecting time-series modeling with a containerized predict
 
 ## Current status
 
+Real-data exploration now uses FreshRetailNet-50K for retail forecasting with stockout information. The full training-data audit is in [reports/training_audit.md](reports/training_audit.md). The existing synthetic model and six-feature API schemas remain prototypes; they are not yet a model or serving contract validated for this dataset. Evaluation data has not been used by the audit.
+
 Implemented: synthetic daily demand generation, lag features (1, 7, 14, and 30 days), day-of-week and month features, a chronological 80/20 split, LightGBM training, WAPE reporting, and model serialization.
 
 Implemented API contracts: `PredictionRequest` and `PredictionResponse` in `app/schemas.py`, with tests for valid inputs and rejection of malformed values. Demand accepts integer or fractional JSON numbers but rejects numeric strings, booleans, negative values, NaN, and infinity. Calendar values require integers, and unexpected fields are rejected. Responses require finite nonnegative demand and a nonblank model version.

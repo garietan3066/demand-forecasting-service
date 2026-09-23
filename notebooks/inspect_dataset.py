@@ -1,4 +1,4 @@
-"""Load and inspect training data without accessing the evaluation split."""
+"""Inspect training data; the loader may also download/cache evaluation files."""
 
 from pathlib import Path
 
