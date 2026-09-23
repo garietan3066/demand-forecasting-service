@@ -1,0 +1,19 @@
+# Virtual Environment
+venv/
+env/
+.env
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Artifacts & local data (optional to commit model artifact, but recommended to ignore if >50MB)
+# artifacts/*.joblib
+data/
+
+# OS / Editor specific
+.vscode/
+.DS_Store
+Thumbs.db
