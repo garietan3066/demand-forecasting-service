@@ -1,0 +1,8 @@
+# Complete development environment.
+-r training.in
+
+pytest>=8.0.0
+httpx>=0.27.0
+pip-audit==2.10.1
+pip-tools
+ruff

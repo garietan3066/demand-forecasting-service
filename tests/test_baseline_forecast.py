@@ -6,11 +6,13 @@ from notebooks.baseline_forecast import choose_pairs, metrics, predict_baselines
 
 
 def sample():
-    return pd.DataFrame([
-        dict(store_id=1, product_id=product, dt=date, sale_amount=float(offset + day))
-        for product, offset in [(1, 0), (2, 100)]
-        for day, date in enumerate(pd.date_range("2024-01-01", periods=15))
-    ])
+    return pd.DataFrame(
+        [
+            dict(store_id=1, product_id=product, dt=date, sale_amount=float(offset + day))
+            for product, offset in [(1, 0), (2, 100)]
+            for day, date in enumerate(pd.date_range("2024-01-01", periods=15))
+        ]
+    )
 
 
 def test_future_and_current_targets_cannot_change_present_prediction():
@@ -19,8 +21,10 @@ def test_future_and_current_targets_cannot_change_present_prediction():
     changed.loc[changed.dt.ge("2024-01-10"), "sale_amount"] = 9999
     columns = ["yesterday", "last_week", "mean_previous_7_days"]
     before, after = predict_baselines(original), predict_baselines(changed)
-    pd.testing.assert_frame_equal(before.loc[before.dt.le("2024-01-10"), columns],
-                                  after.loc[after.dt.le("2024-01-10"), columns])
+    pd.testing.assert_frame_equal(
+        before.loc[before.dt.le("2024-01-10"), columns],
+        after.loc[after.dt.le("2024-01-10"), columns],
+    )
 
 
 def test_series_do_not_share_history_and_input_order_is_irrelevant():
@@ -48,7 +52,7 @@ def test_selection_is_independent_of_sales_and_row_order():
 
 def test_zero_demand_wape_is_undefined_and_metrics_are_correct():
     assert metrics([0, 0], [1, 2])["wape"] is None
-    assert metrics([1, 3], [2, 2]) == {"rows": 2, "wape": .5, "mae": 1., "bias": 0.}
+    assert metrics([1, 3], [2, 2]) == {"rows": 2, "wape": 0.5, "mae": 1.0, "bias": 0.0}
 
 
 def test_changed_training_file_is_rejected(tmp_path):

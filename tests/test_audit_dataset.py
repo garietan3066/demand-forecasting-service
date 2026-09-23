@@ -7,10 +7,18 @@ from notebooks.audit_dataset import inspect_batch, summarize_series
 
 
 def row():
-    return dict(store_id=1, product_id=2, dt="2024-01-01", sale_amount=1.0,
-                stock_hour6_22_cnt=1, holiday_flag=0, activity_flag=1, discount=1.0,
-                hours_sale=[1.0] + [0.0] * 23,
-                hours_stock_status=[0] * 6 + [1] + [0] * 17)
+    return dict(
+        store_id=1,
+        product_id=2,
+        dt="2024-01-01",
+        sale_amount=1.0,
+        stock_hour6_22_cnt=1,
+        holiday_flag=0,
+        activity_flag=1,
+        discount=1.0,
+        hours_sale=[1.0] + [0.0] * 23,
+        hours_stock_status=[0] * 6 + [1] + [0] * 17,
+    )
 
 
 def test_hour_alignment_and_sales_totals():
@@ -23,8 +31,9 @@ def test_hour_alignment_and_sales_totals():
 
 def test_malformed_arrays_and_values_are_reported():
     bad = row()
-    bad.update(dt="invalid", sale_amount=-1.0, discount=1.5, hours_sale=[0.0],
-               hours_stock_status=[2] * 24)
+    bad.update(
+        dt="invalid", sale_amount=-1.0, discount=1.5, hours_sale=[0.0], hours_stock_status=[2] * 24
+    )
     _, checks = inspect_batch(pa.Table.from_pylist([bad]))
     assert checks["invalid_dates"] == 1
     assert checks["negative_daily_sales"] == 1

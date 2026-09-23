@@ -1,31 +1,33 @@
+import os
+
+import joblib
+import lightgbm as lgb
 import numpy as np
 import pandas as pd
-import lightgbm as lgb
-import joblib
-import os
+
 
 def generate_and_train():
     np.random.seed(42)
     days = 365
     dates = pd.date_range(start="2025-01-01", periods=days)
-    
+
     # Simulate base demand with seasonal patterns
     base_demand = 50 + 15 * np.sin(2 * np.pi * dates.dayofyear / 365)
     noise = np.random.normal(0, 5, days)
     sales = np.maximum(0, base_demand + noise).astype(int)
 
     df = pd.DataFrame({"date": dates, "demand": sales})
-    
+
     # Feature Engineering
     df["day_of_week"] = df["date"].dt.dayofweek
     df["month"] = df["date"].dt.month
-    
+
     # Lag features (past values)
     df["lag_1"] = df["demand"].shift(1)
     df["lag_7"] = df["demand"].shift(7)
     df["lag_14"] = df["demand"].shift(14)
     df["lag_30"] = df["demand"].shift(30)
-    
+
     # Drop rows containing NaN due to lag generation
     df = df.dropna().reset_index(drop=True)
 
@@ -51,6 +53,7 @@ def generate_and_train():
     os.makedirs("artifacts", exist_ok=True)
     joblib.dump(model, "artifacts/model.joblib")
     print("Model successfully serialized to artifacts/model.joblib")
+
 
 if __name__ == "__main__":
     generate_and_train()
