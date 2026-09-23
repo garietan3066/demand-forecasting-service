@@ -1,3 +1,7 @@
+See [Project scope and acceptance criteria](docs/project_scope.md)
+for the prediction target, evaluation protocol, security requirements,
+and completion checklist.
+
 # Supply Chain Demand Forecasting Service
 
 A portfolio project connecting time-series modeling with a containerized prediction API. The intended use case is forecasting component demand to support inventory planning; inventory policy optimization is outside the current scope.
