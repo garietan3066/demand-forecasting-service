@@ -2,6 +2,31 @@ See [Project scope and acceptance criteria](docs/project_scope.md)
 for the prediction target, evaluation protocol, security requirements,
 and completion checklist.
 
+## Verified Windows development environment
+
+Use Python 3.11.
+
+```powershell
+python -m venv venv
+.\venv\Scripts\python.exe -m pip install --upgrade pip setuptools
+.\venv\Scripts\python.exe -m pip install --require-hashes -r requirements/development-windows-py311.txt
+.\venv\Scripts\python.exe -m pytest -q
+```
+
+Quality checks:
+
+```powershell
+.\venv\Scripts\python.exe -m ruff check .
+.\venv\Scripts\python.exe -m ruff format --check .
+.\venv\Scripts\python.exe -m pip check
+.\venv\Scripts\python.exe -m pip_audit
+```
+
+See [dependency management](requirements/README.md) for dependency updates.
+
+The Windows lock is tested separately from the Linux compatibility job.
+A Linux deployment lock will be introduced before container deployment.
+
 # Supply Chain Demand Forecasting Service
 
 A portfolio project connecting time-series modeling with a containerized prediction API. The intended use case is forecasting component demand to support inventory planning; inventory policy optimization is outside the current scope.

@@ -1,8 +1,8 @@
 """Reproducible rolling one-day sales baselines on audited training data."""
 
 import hashlib
-from importlib.metadata import version
 import json
+from importlib.metadata import version
 from pathlib import Path
 
 import numpy as np
@@ -20,16 +20,22 @@ BASELINES = ["yesterday", "last_week", "mean_previous_7_days"]
 def choose_pairs(first_day, size=200):
     """Select by stable ID hashes, never by sales or validation performance."""
     pairs = set(map(tuple, first_day[KEYS].to_numpy().tolist()))
-    return sorted(pairs, key=lambda pair: (
-        hashlib.sha256(f"freshretail-v1:{pair[0]}:{pair[1]}".encode()).hexdigest(), pair
-    ))[:size]
+    return sorted(
+        pairs,
+        key=lambda pair: (
+            hashlib.sha256(f"freshretail-v1:{pair[0]}:{pair[1]}".encode()).hexdigest(),
+            pair,
+        ),
+    )[:size]
 
 
 def verify_file(path, expected_hash):
     with path.open("rb") as stream:
         actual = hashlib.file_digest(stream, "sha256").hexdigest()
     if actual != expected_hash:
-        raise ValueError(f"Training file integrity mismatch: {path.name}; rerun and review the audit.")
+        raise ValueError(
+            f"Training file integrity mismatch: {path.name}; rerun and review the audit."
+        )
 
 
 def verified_shards():
@@ -54,9 +60,11 @@ def batches(paths):
     for path in paths:
         with pa.memory_map(str(path), "r") as source:
             for batch in pa.ipc.open_stream(source):
-                yield pa.Table.from_batches([batch]).select(
-                    KEYS + ["dt", "sale_amount", "stock_hour6_22_cnt"]
-                ).to_pandas()
+                yield (
+                    pa.Table.from_batches([batch])
+                    .select(KEYS + ["dt", "sale_amount", "stock_hour6_22_cnt"])
+                    .to_pandas()
+                )
 
 
 def predict_baselines(frame):
@@ -89,8 +97,12 @@ def metrics(actual, predicted):
         raise ValueError("Metrics require finite observations and predictions.")
     error = predicted - actual
     total = float(actual.sum())
-    return {"rows": len(actual), "wape": float(np.abs(error).sum() / total) if total else None,
-            "mae": float(np.abs(error).mean()), "bias": float(error.mean())}
+    return {
+        "rows": len(actual),
+        "wape": float(np.abs(error).sum() / total) if total else None,
+        "mae": float(np.abs(error).mean()),
+        "bias": float(error.mean()),
+    }
 
 
 def main():
@@ -104,7 +116,11 @@ def main():
         chunks.append(batch.loc[pd.MultiIndex.from_frame(batch[KEYS]).isin(selected_index)])
     selected = pd.concat(chunks, ignore_index=True)
     predictions = predict_baselines(selected)
-    if len(predictions) != len(pairs) * 90 or predictions.dt.min() != pd.Timestamp(FIRST_DATE) or predictions.dt.max() != pd.Timestamp(LAST_DATE):
+    if (
+        len(predictions) != len(pairs) * 90
+        or predictions.dt.min() != pd.Timestamp(FIRST_DATE)
+        or predictions.dt.max() != pd.Timestamp(LAST_DATE)
+    ):
         raise ValueError("Unexpected subset coverage.")
     validation = predictions.loc[predictions.dt.ge(VALIDATION_START)].copy()
     if validation[BASELINES].isna().any().any():
@@ -116,13 +132,22 @@ def main():
         "week_1": validation.dt.lt("2024-06-19"),
         "week_2": validation.dt.ge("2024-06-19"),
     }
-    results = {name: {segment: metrics(validation.loc[mask, "sale_amount"], validation.loc[mask, name])
-                      for segment, mask in segments.items()} for name in BASELINES}
+    results = {
+        name: {
+            segment: metrics(validation.loc[mask, "sale_amount"], validation.loc[mask, name])
+            for segment, mask in segments.items()
+        }
+        for name in BASELINES
+    }
     report = {
-        "cache_revision": revision, "selection": "200 smallest SHA256 hashes of freshretail-v1:store:product; candidates from first training date only",
+        "cache_revision": revision,
+        "selection": "200 smallest SHA256 hashes of freshretail-v1:store:product; candidates from first training date only",
         "selected_pairs": [dict(zip(KEYS, pair)) for pair in pairs],
-        "history_start": FIRST_DATE, "validation_start": VALIDATION_START, "validation_end": LAST_DATE,
-        "subset_rows": len(selected), "protocol": "Rolling one-day ahead: earlier validation actuals become available for later predictions. Not a fixed-origin 14-day forecast.",
+        "history_start": FIRST_DATE,
+        "validation_start": VALIDATION_START,
+        "validation_end": LAST_DATE,
+        "subset_rows": len(selected),
+        "protocol": "Rolling one-day ahead: earlier validation actuals become available for later predictions. Not a fixed-origin 14-day forecast.",
         "target": "Observed daily sales in normalized units; not ground-truth latent demand",
         "versions": {name: version(name) for name in ["pandas", "numpy", "pyarrow"]},
         "metrics": results,
@@ -131,7 +156,9 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     selected.to_parquet(output / "baseline_subset.parquet", index=False)
     validation.to_parquet(output / "baseline_validation_predictions.parquet", index=False)
-    (ROOT / "reports/baseline_metrics.json").write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
+    (ROOT / "reports/baseline_metrics.json").write_text(
+        json.dumps(report, indent=2, allow_nan=False) + "\n"
+    )
     print(json.dumps(results, indent=2))
 
 

@@ -7,7 +7,6 @@ from pydantic import ValidationError
 
 from app.schemas import PredictionRequest, PredictionResponse
 
-
 VALID_REQUEST = {
     "lag_1": 0,
     "lag_7": 12.5,
@@ -26,17 +25,27 @@ def test_valid_json_accepts_integer_and_fractional_demand(weekday, month):
 
 
 @pytest.mark.parametrize("field", ["lag_1", "lag_7", "lag_14", "lag_30"])
-@pytest.mark.parametrize("value", [-1, float("nan"), float("inf"), -float("inf"), "12", True, None, []])
+@pytest.mark.parametrize(
+    "value", [-1, float("nan"), float("inf"), -float("inf"), "12", True, None, []]
+)
 def test_rejects_invalid_lag(field, value):
     with pytest.raises(ValidationError):
         PredictionRequest.model_validate(dict(VALID_REQUEST, **{field: value}))
 
 
-@pytest.mark.parametrize("field,value", [
-    ("day_of_week", -1), ("day_of_week", 7), ("day_of_week", 1.0),
-    ("day_of_week", True), ("month", 0), ("month", 13),
-    ("month", "1"), ("month", False),
-])
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("day_of_week", -1),
+        ("day_of_week", 7),
+        ("day_of_week", 1.0),
+        ("day_of_week", True),
+        ("month", 0),
+        ("month", 13),
+        ("month", "1"),
+        ("month", False),
+    ],
+)
 def test_rejects_invalid_calendar(field, value):
     with pytest.raises(ValidationError):
         PredictionRequest.model_validate_json(json.dumps(dict(VALID_REQUEST, **{field: value})))
@@ -58,7 +67,8 @@ def test_rejects_unexpected_input():
 def test_response_serializes_as_json():
     response = PredictionResponse(predicted_demand=12.5, model_version="demand-v1")
     assert json.loads(response.model_dump_json()) == {
-        "predicted_demand": 12.5, "model_version": "demand-v1"
+        "predicted_demand": 12.5,
+        "model_version": "demand-v1",
     }
 
 

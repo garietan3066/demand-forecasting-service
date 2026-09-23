@@ -4,7 +4,6 @@ from pathlib import Path
 
 from datasets import load_dataset
 
-
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 CACHE_DIR = PROJECT_ROOT / "data" / "huggingface_cache"
 

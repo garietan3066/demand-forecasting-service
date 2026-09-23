@@ -4,7 +4,6 @@ from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field
 
-
 Demand = Annotated[float, Field(strict=True, ge=0, allow_inf_nan=False)]
 
 
