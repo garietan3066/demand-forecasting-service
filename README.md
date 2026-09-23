@@ -4,6 +4,8 @@ A portfolio project connecting time-series modeling with a containerized predict
 
 ## Current status
 
+A reproducible 200-series baseline now compares yesterday, last week, and a seven-day moving average with chronological validation. See [baseline results](reports/baseline_results.md) and [security and leakage controls](SECURITY.md). The baseline uses observed sales, not reconstructed demand. GitHub Actions is configured to run tests and dependency vulnerability checks.
+
 Real-data exploration now uses FreshRetailNet-50K for retail forecasting with stockout information. The full training-data audit is in [reports/training_audit.md](reports/training_audit.md). The existing synthetic model and six-feature API schemas remain prototypes; they are not yet a model or serving contract validated for this dataset. Evaluation data has not been used by the audit.
 
 Implemented: synthetic daily demand generation, lag features (1, 7, 14, and 30 days), day-of-week and month features, a chronological 80/20 split, LightGBM training, WAPE reporting, and model serialization.
