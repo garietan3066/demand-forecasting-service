@@ -34,7 +34,7 @@ The [publisher's data card](https://huggingface.co/datasets/Dingdong-Inc/FreshRe
 ## Reproduce
 
 ```powershell
-.\venv\Scripts\python.exe notebooks/baseline_forecast.py
+.\.venv-check\Scripts\python.exe -m notebooks.baseline_forecast
 .\venv\Scripts\python.exe -m pytest -q
 .\venv\Scripts\python.exe -m pip install -r requirements-dev.txt
 .\venv\Scripts\python.exe -m pip_audit
