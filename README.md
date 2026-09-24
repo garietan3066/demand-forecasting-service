@@ -2,6 +2,17 @@ See [Project scope and acceptance criteria](docs/project_scope.md)
 for the prediction target, evaluation protocol, security requirements,
 and completion checklist.
 
+## Run the baseline experiment
+
+Reusable baseline and metric calculations live in `demand_forecasting/`.
+The experiment runner is `notebooks/baseline_forecast.py`.
+
+From the project root, run:
+
+```powershell
+.\.venv-check\Scripts\python.exe -m notebooks.baseline_forecast
+```
+
 ## Verified Windows development environment
 
 Use Python 3.11.

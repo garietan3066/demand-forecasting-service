@@ -9,12 +9,14 @@ import numpy as np
 import pandas as pd
 import pyarrow as pa
 
+from demand_forecasting.baselines import predict_baselines
+from demand_forecasting.constants import BASELINES, KEYS
+from demand_forecasting.metrics import metrics
+
 ROOT = Path(__file__).resolve().parents[1]
 FIRST_DATE = "2024-03-28"
 VALIDATION_START = "2024-06-12"
 LAST_DATE = "2024-06-25"
-KEYS = ["store_id", "product_id"]
-BASELINES = ["yesterday", "last_week", "mean_previous_7_days"]
 
 
 def choose_pairs(first_day, size=200):
@@ -65,44 +67,6 @@ def batches(paths):
                     .select(KEYS + ["dt", "sale_amount", "stock_hour6_22_cnt"])
                     .to_pandas()
                 )
-
-
-def predict_baselines(frame):
-    frame = frame.copy()
-    frame["dt"] = pd.to_datetime(frame.dt, errors="raise")
-    frame = frame.sort_values(KEYS + ["dt"]).reset_index(drop=True)
-    if frame[KEYS + ["dt", "sale_amount"]].isna().any().any():
-        raise ValueError("Missing required values.")
-    if frame.duplicated(KEYS + ["dt"]).any():
-        raise ValueError("Duplicate series dates.")
-    gaps = frame.groupby(KEYS).dt.diff().dropna()
-    if not gaps.eq(pd.Timedelta(days=1)).all():
-        raise ValueError("Daily gaps must be resolved before using row-based lags.")
-    if not np.isfinite(frame.sale_amount).all() or frame.sale_amount.lt(0).any():
-        raise ValueError("Sales must be finite and nonnegative.")
-    grouped = frame.groupby(KEYS).sale_amount
-    frame["yesterday"] = grouped.shift(1)
-    frame["last_week"] = grouped.shift(7)
-    frame["mean_previous_7_days"] = grouped.transform(
-        lambda sales: sales.shift(1).rolling(7, min_periods=7).mean()
-    )
-    return frame
-
-
-def metrics(actual, predicted):
-    actual, predicted = np.asarray(actual), np.asarray(predicted)
-    if not len(actual):
-        return {"rows": 0, "wape": None, "mae": None, "bias": None}
-    if not np.isfinite(actual).all() or not np.isfinite(predicted).all():
-        raise ValueError("Metrics require finite observations and predictions.")
-    error = predicted - actual
-    total = float(actual.sum())
-    return {
-        "rows": len(actual),
-        "wape": float(np.abs(error).sum() / total) if total else None,
-        "mae": float(np.abs(error).mean()),
-        "bias": float(error.mean()),
-    }
 
 
 def main():
