@@ -2,7 +2,9 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from notebooks.baseline_forecast import choose_pairs, metrics, predict_baselines, verify_file
+from demand_forecasting.baselines import predict_baselines
+from demand_forecasting.metrics import metrics
+from notebooks.baseline_forecast import choose_pairs, verify_file
 
 
 def sample():
