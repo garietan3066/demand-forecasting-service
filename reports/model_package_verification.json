@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "package_directory": "artifacts/releases/blend-v1-917dab07c759",
+  "metadata_sha256": "8571f6c71b2b91081bd41cdf319d064a8e4124a9dd41b27dcf5dc10e9d7adc95",
+  "model_sha256": "b6c077612f56f96e4b0afd8dba94cfe36bdfd26449df06fbd703a5918bce52f1",
+  "verification_script_sha256": "4f8048da35efedf28fb71a62e9490e6acc6200211de771068066d907f74345aa",
+  "final_evaluation_report_sha256": "d7b7f6614dbe1d0262f133a4f3f44a1cda501cc30b1c55a88f6d19b9b7d80bcb",
+  "reference_predictions_sha256": "710ddb7ab04465e487f16f6549ab654cf1ef70c393ff861c5f8172025332f44b",
+  "rows_verified": 1400,
+  "days_verified": 7,
+  "relative_tolerance": 1e-10,
+  "absolute_tolerance": 1e-12,
+  "maximum_absolute_difference": {
+    "mean_previous_7_days": 0.0,
+    "lightgbm": 0.0,
+    "blend_50_50": 0.0
+  },
+  "protocol": "Loaded package; serving features built from prior history; actuals appended only after each day's prediction; no retraining."
+}
