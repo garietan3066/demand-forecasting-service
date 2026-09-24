@@ -1,0 +1,1038 @@
+{
+  "dataset": "Dingdong-Inc/FreshRetailNet-50K",
+  "cache_revision": "08c1fab7f9257bc73679d415d65d644165d351d4",
+  "implementation_commit": "65afd4ab41a14fd3aef10b9d0d8fd6028a0f158c",
+  "evaluation_manifest_sha256": "c2c22f904f00094d9c2280945911270d0429daea8c843e5bd33620a15dcef0cb",
+  "selection_document_sha256": "e096a0450e70ddda6f5af58e77790028aed0b84cba5f1807c6457a34d4c7f834",
+  "predictions_sha256": "710ddb7ab04465e487f16f6549ab654cf1ef70c393ff861c5f8172025332f44b",
+  "selected_method": "blend_50_50",
+  "selected_pairs": [
+    {
+      "store_id": 497,
+      "product_id": 226
+    },
+    {
+      "store_id": 241,
+      "product_id": 292
+    },
+    {
+      "store_id": 514,
+      "product_id": 740
+    },
+    {
+      "store_id": 263,
+      "product_id": 285
+    },
+    {
+      "store_id": 815,
+      "product_id": 793
+    },
+    {
+      "store_id": 384,
+      "product_id": 699
+    },
+    {
+      "store_id": 247,
+      "product_id": 306
+    },
+    {
+      "store_id": 162,
+      "product_id": 104
+    },
+    {
+      "store_id": 455,
+      "product_id": 104
+    },
+    {
+      "store_id": 72,
+      "product_id": 393
+    },
+    {
+      "store_id": 700,
+      "product_id": 447
+    },
+    {
+      "store_id": 487,
+      "product_id": 422
+    },
+    {
+      "store_id": 242,
+      "product_id": 486
+    },
+    {
+      "store_id": 493,
+      "product_id": 122
+    },
+    {
+      "store_id": 517,
+      "product_id": 719
+    },
+    {
+      "store_id": 894,
+      "product_id": 683
+    },
+    {
+      "store_id": 39,
+      "product_id": 393
+    },
+    {
+      "store_id": 654,
+      "product_id": 115
+    },
+    {
+      "store_id": 165,
+      "product_id": 117
+    },
+    {
+      "store_id": 56,
+      "product_id": 600
+    },
+    {
+      "store_id": 304,
+      "product_id": 70
+    },
+    {
+      "store_id": 798,
+      "product_id": 309
+    },
+    {
+      "store_id": 424,
+      "product_id": 99
+    },
+    {
+      "store_id": 124,
+      "product_id": 222
+    },
+    {
+      "store_id": 300,
+      "product_id": 190
+    },
+    {
+      "store_id": 198,
+      "product_id": 313
+    },
+    {
+      "store_id": 40,
+      "product_id": 87
+    },
+    {
+      "store_id": 869,
+      "product_id": 740
+    },
+    {
+      "store_id": 467,
+      "product_id": 122
+    },
+    {
+      "store_id": 328,
+      "product_id": 292
+    },
+    {
+      "store_id": 674,
+      "product_id": 45
+    },
+    {
+      "store_id": 648,
+      "product_id": 629
+    },
+    {
+      "store_id": 188,
+      "product_id": 300
+    },
+    {
+      "store_id": 300,
+      "product_id": 853
+    },
+    {
+      "store_id": 389,
+      "product_id": 115
+    },
+    {
+      "store_id": 417,
+      "product_id": 296
+    },
+    {
+      "store_id": 489,
+      "product_id": 769
+    },
+    {
+      "store_id": 182,
+      "product_id": 127
+    },
+    {
+      "store_id": 285,
+      "product_id": 822
+    },
+    {
+      "store_id": 885,
+      "product_id": 58
+    },
+    {
+      "store_id": 359,
+      "product_id": 90
+    },
+    {
+      "store_id": 126,
+      "product_id": 783
+    },
+    {
+      "store_id": 124,
+      "product_id": 683
+    },
+    {
+      "store_id": 158,
+      "product_id": 19
+    },
+    {
+      "store_id": 571,
+      "product_id": 670
+    },
+    {
+      "store_id": 650,
+      "product_id": 666
+    },
+    {
+      "store_id": 104,
+      "product_id": 118
+    },
+    {
+      "store_id": 126,
+      "product_id": 144
+    },
+    {
+      "store_id": 751,
+      "product_id": 4
+    },
+    {
+      "store_id": 226,
+      "product_id": 644
+    },
+    {
+      "store_id": 113,
+      "product_id": 834
+    },
+    {
+      "store_id": 498,
+      "product_id": 635
+    },
+    {
+      "store_id": 95,
+      "product_id": 12
+    },
+    {
+      "store_id": 427,
+      "product_id": 763
+    },
+    {
+      "store_id": 207,
+      "product_id": 122
+    },
+    {
+      "store_id": 204,
+      "product_id": 77
+    },
+    {
+      "store_id": 470,
+      "product_id": 117
+    },
+    {
+      "store_id": 872,
+      "product_id": 19
+    },
+    {
+      "store_id": 429,
+      "product_id": 737
+    },
+    {
+      "store_id": 806,
+      "product_id": 6
+    },
+    {
+      "store_id": 0,
+      "product_id": 631
+    },
+    {
+      "store_id": 62,
+      "product_id": 129
+    },
+    {
+      "store_id": 511,
+      "product_id": 296
+    },
+    {
+      "store_id": 218,
+      "product_id": 363
+    },
+    {
+      "store_id": 422,
+      "product_id": 689
+    },
+    {
+      "store_id": 511,
+      "product_id": 310
+    },
+    {
+      "store_id": 370,
+      "product_id": 796
+    },
+    {
+      "store_id": 100,
+      "product_id": 193
+    },
+    {
+      "store_id": 418,
+      "product_id": 694
+    },
+    {
+      "store_id": 171,
+      "product_id": 79
+    },
+    {
+      "store_id": 345,
+      "product_id": 317
+    },
+    {
+      "store_id": 232,
+      "product_id": 578
+    },
+    {
+      "store_id": 457,
+      "product_id": 369
+    },
+    {
+      "store_id": 669,
+      "product_id": 381
+    },
+    {
+      "store_id": 81,
+      "product_id": 194
+    },
+    {
+      "store_id": 181,
+      "product_id": 41
+    },
+    {
+      "store_id": 465,
+      "product_id": 150
+    },
+    {
+      "store_id": 500,
+      "product_id": 93
+    },
+    {
+      "store_id": 409,
+      "product_id": 759
+    },
+    {
+      "store_id": 508,
+      "product_id": 215
+    },
+    {
+      "store_id": 334,
+      "product_id": 290
+    },
+    {
+      "store_id": 500,
+      "product_id": 108
+    },
+    {
+      "store_id": 170,
+      "product_id": 650
+    },
+    {
+      "store_id": 190,
+      "product_id": 596
+    },
+    {
+      "store_id": 383,
+      "product_id": 822
+    },
+    {
+      "store_id": 797,
+      "product_id": 402
+    },
+    {
+      "store_id": 881,
+      "product_id": 763
+    },
+    {
+      "store_id": 309,
+      "product_id": 38
+    },
+    {
+      "store_id": 200,
+      "product_id": 379
+    },
+    {
+      "store_id": 542,
+      "product_id": 740
+    },
+    {
+      "store_id": 253,
+      "product_id": 71
+    },
+    {
+      "store_id": 442,
+      "product_id": 90
+    },
+    {
+      "store_id": 610,
+      "product_id": 775
+    },
+    {
+      "store_id": 598,
+      "product_id": 600
+    },
+    {
+      "store_id": 695,
+      "product_id": 207
+    },
+    {
+      "store_id": 861,
+      "product_id": 50
+    },
+    {
+      "store_id": 481,
+      "product_id": 58
+    },
+    {
+      "store_id": 438,
+      "product_id": 666
+    },
+    {
+      "store_id": 250,
+      "product_id": 494
+    },
+    {
+      "store_id": 209,
+      "product_id": 363
+    },
+    {
+      "store_id": 444,
+      "product_id": 386
+    },
+    {
+      "store_id": 662,
+      "product_id": 864
+    },
+    {
+      "store_id": 510,
+      "product_id": 600
+    },
+    {
+      "store_id": 391,
+      "product_id": 76
+    },
+    {
+      "store_id": 424,
+      "product_id": 857
+    },
+    {
+      "store_id": 20,
+      "product_id": 588
+    },
+    {
+      "store_id": 691,
+      "product_id": 580
+    },
+    {
+      "store_id": 300,
+      "product_id": 635
+    },
+    {
+      "store_id": 656,
+      "product_id": 381
+    },
+    {
+      "store_id": 230,
+      "product_id": 650
+    },
+    {
+      "store_id": 131,
+      "product_id": 94
+    },
+    {
+      "store_id": 75,
+      "product_id": 434
+    },
+    {
+      "store_id": 522,
+      "product_id": 310
+    },
+    {
+      "store_id": 721,
+      "product_id": 177
+    },
+    {
+      "store_id": 236,
+      "product_id": 858
+    },
+    {
+      "store_id": 454,
+      "product_id": 656
+    },
+    {
+      "store_id": 662,
+      "product_id": 503
+    },
+    {
+      "store_id": 175,
+      "product_id": 631
+    },
+    {
+      "store_id": 625,
+      "product_id": 810
+    },
+    {
+      "store_id": 684,
+      "product_id": 215
+    },
+    {
+      "store_id": 554,
+      "product_id": 345
+    },
+    {
+      "store_id": 149,
+      "product_id": 250
+    },
+    {
+      "store_id": 110,
+      "product_id": 666
+    },
+    {
+      "store_id": 84,
+      "product_id": 768
+    },
+    {
+      "store_id": 29,
+      "product_id": 858
+    },
+    {
+      "store_id": 405,
+      "product_id": 19
+    },
+    {
+      "store_id": 441,
+      "product_id": 644
+    },
+    {
+      "store_id": 221,
+      "product_id": 644
+    },
+    {
+      "store_id": 241,
+      "product_id": 715
+    },
+    {
+      "store_id": 173,
+      "product_id": 806
+    },
+    {
+      "store_id": 817,
+      "product_id": 254
+    },
+    {
+      "store_id": 721,
+      "product_id": 205
+    },
+    {
+      "store_id": 447,
+      "product_id": 655
+    },
+    {
+      "store_id": 116,
+      "product_id": 607
+    },
+    {
+      "store_id": 18,
+      "product_id": 634
+    },
+    {
+      "store_id": 736,
+      "product_id": 596
+    },
+    {
+      "store_id": 526,
+      "product_id": 67
+    },
+    {
+      "store_id": 210,
+      "product_id": 600
+    },
+    {
+      "store_id": 611,
+      "product_id": 343
+    },
+    {
+      "store_id": 242,
+      "product_id": 136
+    },
+    {
+      "store_id": 883,
+      "product_id": 207
+    },
+    {
+      "store_id": 366,
+      "product_id": 387
+    },
+    {
+      "store_id": 482,
+      "product_id": 515
+    },
+    {
+      "store_id": 434,
+      "product_id": 829
+    },
+    {
+      "store_id": 227,
+      "product_id": 580
+    },
+    {
+      "store_id": 45,
+      "product_id": 350
+    },
+    {
+      "store_id": 49,
+      "product_id": 740
+    },
+    {
+      "store_id": 235,
+      "product_id": 9
+    },
+    {
+      "store_id": 545,
+      "product_id": 757
+    },
+    {
+      "store_id": 707,
+      "product_id": 631
+    },
+    {
+      "store_id": 522,
+      "product_id": 631
+    },
+    {
+      "store_id": 174,
+      "product_id": 207
+    },
+    {
+      "store_id": 393,
+      "product_id": 286
+    },
+    {
+      "store_id": 736,
+      "product_id": 467
+    },
+    {
+      "store_id": 196,
+      "product_id": 11
+    },
+    {
+      "store_id": 405,
+      "product_id": 486
+    },
+    {
+      "store_id": 467,
+      "product_id": 783
+    },
+    {
+      "store_id": 241,
+      "product_id": 93
+    },
+    {
+      "store_id": 81,
+      "product_id": 686
+    },
+    {
+      "store_id": 851,
+      "product_id": 806
+    },
+    {
+      "store_id": 60,
+      "product_id": 379
+    },
+    {
+      "store_id": 72,
+      "product_id": 580
+    },
+    {
+      "store_id": 890,
+      "product_id": 783
+    },
+    {
+      "store_id": 446,
+      "product_id": 631
+    },
+    {
+      "store_id": 146,
+      "product_id": 740
+    },
+    {
+      "store_id": 3,
+      "product_id": 426
+    },
+    {
+      "store_id": 667,
+      "product_id": 4
+    },
+    {
+      "store_id": 877,
+      "product_id": 207
+    },
+    {
+      "store_id": 605,
+      "product_id": 290
+    },
+    {
+      "store_id": 228,
+      "product_id": 215
+    },
+    {
+      "store_id": 792,
+      "product_id": 339
+    },
+    {
+      "store_id": 419,
+      "product_id": 130
+    },
+    {
+      "store_id": 546,
+      "product_id": 387
+    },
+    {
+      "store_id": 677,
+      "product_id": 45
+    },
+    {
+      "store_id": 701,
+      "product_id": 309
+    },
+    {
+      "store_id": 432,
+      "product_id": 71
+    },
+    {
+      "store_id": 870,
+      "product_id": 672
+    },
+    {
+      "store_id": 781,
+      "product_id": 150
+    },
+    {
+      "store_id": 699,
+      "product_id": 74
+    },
+    {
+      "store_id": 654,
+      "product_id": 634
+    },
+    {
+      "store_id": 772,
+      "product_id": 122
+    },
+    {
+      "store_id": 42,
+      "product_id": 272
+    },
+    {
+      "store_id": 490,
+      "product_id": 554
+    },
+    {
+      "store_id": 124,
+      "product_id": 515
+    },
+    {
+      "store_id": 549,
+      "product_id": 824
+    },
+    {
+      "store_id": 188,
+      "product_id": 757
+    },
+    {
+      "store_id": 146,
+      "product_id": 258
+    },
+    {
+      "store_id": 312,
+      "product_id": 666
+    },
+    {
+      "store_id": 88,
+      "product_id": 467
+    },
+    {
+      "store_id": 91,
+      "product_id": 108
+    },
+    {
+      "store_id": 209,
+      "product_id": 769
+    },
+    {
+      "store_id": 201,
+      "product_id": 6
+    },
+    {
+      "store_id": 756,
+      "product_id": 256
+    },
+    {
+      "store_id": 41,
+      "product_id": 775
+    },
+    {
+      "store_id": 606,
+      "product_id": 190
+    },
+    {
+      "store_id": 882,
+      "product_id": 215
+    },
+    {
+      "store_id": 188,
+      "product_id": 41
+    },
+    {
+      "store_id": 538,
+      "product_id": 191
+    },
+    {
+      "store_id": 741,
+      "product_id": 116
+    },
+    {
+      "store_id": 787,
+      "product_id": 639
+    }
+  ],
+  "protocol": "Rolling one-day forecasts; one training-only fit; fixed model throughout evaluation; no evaluation-driven selection.",
+  "target": "Observed sales in normalized units, not latent demand",
+  "feature_columns": [
+    "store_id",
+    "product_id",
+    "lag_1",
+    "lag_7",
+    "lag_14",
+    "lag_30",
+    "mean_7",
+    "mean_14",
+    "std_7",
+    "day_of_week"
+  ],
+  "model_parameters": {
+    "objective": "regression",
+    "n_estimators": 200,
+    "learning_rate": 0.05,
+    "num_leaves": 15,
+    "min_child_samples": 30,
+    "reg_lambda": 1.0,
+    "random_state": 42,
+    "n_jobs": 2,
+    "deterministic": true,
+    "force_col_wise": true,
+    "verbosity": -1
+  },
+  "blend_weights": {
+    "lightgbm": 0.5,
+    "mean_previous_7_days": 0.5
+  },
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.6",
+    "lightgbm": "4.7.0",
+    "scikit-learn": "1.9.1",
+    "pyarrow": "25.0.1"
+  },
+  "training_end": "2024-06-25",
+  "usable_training_rows": 12000,
+  "evaluation_start": "2024-06-26",
+  "evaluation_end": "2024-07-02",
+  "evaluation_rows": 1400,
+  "selected_series": 200,
+  "pooled_metrics": {
+    "mean_previous_7_days": {
+      "rows": 1400,
+      "wape": 0.3816469975204168,
+      "mae": 0.42689642857142857,
+      "bias": 0.004936224489795921
+    },
+    "lightgbm": {
+      "rows": 1400,
+      "wape": 0.3728040554678303,
+      "mae": 0.4170050357271515,
+      "bias": -0.022847528525321004
+    },
+    "blend_50_50": {
+      "rows": 1400,
+      "wape": 0.36913830207561393,
+      "mae": 0.4129046575207776,
+      "bias": -0.008955652017762545
+    }
+  },
+  "daily_metrics": [
+    {
+      "date": "2024-06-26",
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 200,
+          "wape": 0.35975626269465133,
+          "mae": 0.3795428571428572,
+          "bias": 0.06504285714285714
+        },
+        "lightgbm": {
+          "rows": 200,
+          "wape": 0.3390811963258128,
+          "mae": 0.3577306621237325,
+          "bias": -0.04943704675970508
+        },
+        "blend_50_50": {
+          "rows": 200,
+          "wape": 0.34446259474208607,
+          "mae": 0.3634080374529008,
+          "bias": 0.007802905191576009
+        }
+      }
+    },
+    {
+      "date": "2024-06-27",
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 200,
+          "wape": 0.3808916036101741,
+          "mae": 0.38795714285714283,
+          "bias": 0.10684285714285714
+        },
+        "lightgbm": {
+          "rows": 200,
+          "wape": 0.3926490563635592,
+          "mae": 0.3999326963591032,
+          "bias": -0.023959300009730917
+        },
+        "blend_50_50": {
+          "rows": 200,
+          "wape": 0.376195768421482,
+          "mae": 0.3831741999257005,
+          "bias": 0.04144177856656313
+        }
+      }
+    },
+    {
+      "date": "2024-06-28",
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 200,
+          "wape": 0.3844538817578852,
+          "mae": 0.40285,
+          "bias": 0.07626428571428574
+        },
+        "lightgbm": {
+          "rows": 200,
+          "wape": 0.37979807806498656,
+          "mae": 0.39797141610039616,
+          "bias": -0.03138680497745135
+        },
+        "blend_50_50": {
+          "rows": 200,
+          "wape": 0.38008283029650325,
+          "mae": 0.3982697937261909,
+          "bias": 0.022438740368417188
+        }
+      }
+    },
+    {
+      "date": "2024-06-29",
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 200,
+          "wape": 0.3682389953790407,
+          "mae": 0.4957785714285714,
+          "bias": -0.22807857142857146
+        },
+        "lightgbm": {
+          "rows": 200,
+          "wape": 0.3517658399349532,
+          "mae": 0.47359993859642424,
+          "bias": -0.08161449357703625
+        },
+        "blend_50_50": {
+          "rows": 200,
+          "wape": 0.35023953556456183,
+          "mae": 0.47154499870734784,
+          "bias": -0.15484653250280384
+        }
+      }
+    },
+    {
+      "date": "2024-06-30",
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 200,
+          "wape": 0.3736425239767581,
+          "mae": 0.5122807142857143,
+          "bias": -0.2574664285714286
+        },
+        "lightgbm": {
+          "rows": 200,
+          "wape": 0.3626318471192467,
+          "mae": 0.49718458083360756,
+          "bias": -0.06685508958450274
+        },
+        "blend_50_50": {
+          "rows": 200,
+          "wape": 0.3581701541033547,
+          "mae": 0.49106739893263396,
+          "bias": -0.16216075907796565
+        }
+      }
+    },
+    {
+      "date": "2024-07-01",
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 200,
+          "wape": 0.36529641246397954,
+          "mae": 0.3685292857142857,
+          "bias": 0.12205642857142855
+        },
+        "lightgbm": {
+          "rows": 200,
+          "wape": 0.34977398016182193,
+          "mae": 0.352869479886254,
+          "bias": 0.04164033929287747
+        },
+        "blend_50_50": {
+          "rows": 200,
+          "wape": 0.35051735645443544,
+          "mae": 0.35361943505905713,
+          "bias": 0.08184838393215302
+        }
+      }
+    },
+    {
+      "date": "2024-07-02",
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 200,
+          "wape": 0.449288841058158,
+          "mae": 0.4413364285714286,
+          "bias": 0.14989214285714286
+        },
+        "lightgbm": {
+          "rows": 200,
+          "wape": 0.44767023942842615,
+          "mae": 0.439746476190543,
+          "bias": 0.05167969593830182
+        },
+        "blend_50_50": {
+          "rows": 200,
+          "wape": 0.4369833440309597,
+          "mae": 0.42924873884161174,
+          "bias": 0.10078591939772234
+        }
+      }
+    }
+  ]
+}
