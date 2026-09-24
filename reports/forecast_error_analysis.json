@@ -1,0 +1,200 @@
+{
+  "source": "Saved development cross-validation predictions",
+  "interpretation": "Positive extra_absolute_error means LightGBM is worse. Stockout labels are retrospective diagnostics, not predictors. Groups are observational and do not establish causality.",
+  "segments": [
+    {
+      "fold": 1,
+      "segment": "all",
+      "rows": 2800,
+      "actual_sales_total": 2828.2,
+      "baseline": {
+        "rows": 2800,
+        "wape": 0.35533857981351086,
+        "mae": 0.3589173469387755,
+        "bias": -0.012238775510204079
+      },
+      "lightgbm": {
+        "rows": 2800,
+        "wape": 0.36515087685585995,
+        "mae": 0.36882846782990825,
+        "bias": -0.04837286671170534
+      },
+      "extra_absolute_error": 27.75113849517163
+    },
+    {
+      "fold": 1,
+      "segment": "no_stockout_06_22",
+      "rows": 1664,
+      "actual_sales_total": 1731.8400000000001,
+      "baseline": {
+        "rows": 1664,
+        "wape": 0.3345186952275367,
+        "mae": 0.34815676510989013,
+        "bias": -0.016985748626373618
+      },
+      "lightgbm": {
+        "rows": 1664,
+        "wape": 0.3423003390230708,
+        "mae": 0.35625566053708835,
+        "bias": -0.05685717336725515
+      },
+      "extra_absolute_error": 13.476561990857817
+    },
+    {
+      "fold": 1,
+      "segment": "some_stockout_06_22",
+      "rows": 1136,
+      "actual_sales_total": 1096.3600000000001,
+      "baseline": {
+        "rows": 1136,
+        "wape": 0.3882262343442977,
+        "mae": 0.37467932595573444,
+        "bias": -0.005285462776659955
+      },
+      "lightgbm": {
+        "rows": 1136,
+        "wape": 0.40124620634648117,
+        "mae": 0.3872449742869966,
+        "bias": -0.03594514992047744
+      },
+      "extra_absolute_error": 14.27457650431387
+    },
+    {
+      "fold": 2,
+      "segment": "all",
+      "rows": 2800,
+      "actual_sales_total": 2830.6180000000004,
+      "baseline": {
+        "rows": 2800,
+        "wape": 0.34882296778603517,
+        "mae": 0.35263734693877546,
+        "bias": -0.011266836734693876
+      },
+      "lightgbm": {
+        "rows": 2800,
+        "wape": 0.3410137879241997,
+        "mae": 0.3447427736951509,
+        "bias": -0.008636683205254526
+      },
+      "extra_absolute_error": -22.104805082148914
+    },
+    {
+      "fold": 2,
+      "segment": "no_stockout_06_22",
+      "rows": 1705,
+      "actual_sales_total": 1802.9279999999999,
+      "baseline": {
+        "rows": 1705,
+        "wape": 0.3276591506387705,
+        "mae": 0.346478508588186,
+        "bias": 0.0002973607038123155
+      },
+      "lightgbm": {
+        "rows": 1705,
+        "wape": 0.32315120205551995,
+        "mae": 0.34171164247481195,
+        "bias": 0.0035187641089644635
+      },
+      "extra_absolute_error": -8.127506723302758
+    },
+    {
+      "fold": 2,
+      "segment": "some_stockout_06_22",
+      "rows": 1095,
+      "actual_sales_total": 1027.69,
+      "baseline": {
+        "rows": 1095,
+        "wape": 0.3859517113971278,
+        "mae": 0.3622271363339856,
+        "bias": -0.029273189823874755
+      },
+      "lightgbm": {
+        "rows": 1095,
+        "wape": 0.3723510162859111,
+        "mae": 0.3494624802985096,
+        "bias": -0.027563658247029305
+      },
+      "extra_absolute_error": -13.97729835884627
+    },
+    {
+      "fold": 3,
+      "segment": "all",
+      "rows": 2800,
+      "actual_sales_total": 2989.94,
+      "baseline": {
+        "rows": 2800,
+        "wape": 0.3632949156170358,
+        "mae": 0.3879392857142857,
+        "bias": -0.016720918367346935
+      },
+      "lightgbm": {
+        "rows": 2800,
+        "wape": 0.36215578189814696,
+        "mae": 0.3867228780459091,
+        "bias": -0.026457835833936513
+      },
+      "extra_absolute_error": -3.4059414714545255
+    },
+    {
+      "fold": 3,
+      "segment": "no_stockout_06_22",
+      "rows": 1548,
+      "actual_sales_total": 1712.6200000000001,
+      "baseline": {
+        "rows": 1548,
+        "wape": 0.3333005236755047,
+        "mae": 0.3687449243263197,
+        "bias": -0.023237356958287183
+      },
+      "lightgbm": {
+        "rows": 1548,
+        "wape": 0.33593779708784177,
+        "mae": 0.3716626550701419,
+        "bias": -0.042145847640636655
+      },
+      "extra_absolute_error": 4.516647191436732
+    },
+    {
+      "fold": 3,
+      "segment": "some_stockout_06_22",
+      "rows": 1252,
+      "actual_sales_total": 1277.32,
+      "baseline": {
+        "rows": 1252,
+        "wape": 0.4035111461050145,
+        "mae": 0.41167161113646733,
+        "bias": -0.00866385212231857
+      },
+      "lightgbm": {
+        "rows": 1252,
+        "wape": 0.39730863720912984,
+        "mae": 0.40534366492010043,
+        "bias": -0.007060837210316841
+      },
+      "extra_absolute_error": -7.922588662891371
+    }
+  ],
+  "fold_series_summary": [
+    {
+      "fold": 1,
+      "series_improved": 104,
+      "series_worsened": 96,
+      "series_tied": 0,
+      "net_extra_absolute_error": 27.75113849517166
+    },
+    {
+      "fold": 2,
+      "series_improved": 114,
+      "series_worsened": 86,
+      "series_tied": 0,
+      "net_extra_absolute_error": -22.104805082148992
+    },
+    {
+      "fold": 3,
+      "series_improved": 111,
+      "series_worsened": 89,
+      "series_tied": 0,
+      "net_extra_absolute_error": -3.405941471454552
+    }
+  ]
+}
