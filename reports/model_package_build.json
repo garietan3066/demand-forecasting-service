@@ -1,0 +1,10 @@
+{
+  "package_directory": "artifacts/releases/blend-v1-917dab07c759",
+  "implementation_commit": "917dab07c7595dc2ccbd79d2c81cd0b30f653fe2",
+  "training_end": "2024-06-25",
+  "training_rows": 12000,
+  "known_series": 200,
+  "model_sha256": "b6c077612f56f96e4b0afd8dba94cfe36bdfd26449df06fbd703a5918bce52f1",
+  "metadata_sha256": "8571f6c71b2b91081bd41cdf319d064a8e4124a9dd41b27dcf5dc10e9d7adc95",
+  "status": "Exported; verified loading and prediction parity pending"
+}
