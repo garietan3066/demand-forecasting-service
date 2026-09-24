@@ -1,0 +1,111 @@
+{
+  "experiment": "Fixed 50:50 blend",
+  "weights": {
+    "mean_previous_7_days": 0.5,
+    "lightgbm": 0.5
+  },
+  "source_predictions_sha256": "5dd403f6742e0efe9bf36175c115354e91c88c917449d451c5ecd24300549b78",
+  "cache_revision": "08c1fab7f9257bc73679d415d65d644165d351d4",
+  "target": "Observed daily sales in normalized units",
+  "selection_note": "This experiment was proposed after inspecting development validation results. These results are not an independent final assessment. No blend-weight search was performed.",
+  "folds": [
+    {
+      "fold": 1,
+      "validation_start": "2024-05-15",
+      "validation_end": "2024-05-28",
+      "validation_rows": 2800,
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 2800,
+          "wape": 0.35533857981351086,
+          "mae": 0.3589173469387755,
+          "bias": -0.012238775510204079
+        },
+        "lightgbm": {
+          "rows": 2800,
+          "wape": 0.36515087685585995,
+          "mae": 0.36882846782990825,
+          "bias": -0.04837286671170534
+        },
+        "blend_50_50": {
+          "rows": 2800,
+          "wape": 0.3458297465093734,
+          "mae": 0.34931274609921775,
+          "bias": -0.030305821110954718
+        }
+      }
+    },
+    {
+      "fold": 2,
+      "validation_start": "2024-05-29",
+      "validation_end": "2024-06-11",
+      "validation_rows": 2800,
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 2800,
+          "wape": 0.34882296778603517,
+          "mae": 0.35263734693877546,
+          "bias": -0.011266836734693876
+        },
+        "lightgbm": {
+          "rows": 2800,
+          "wape": 0.3410137879241997,
+          "mae": 0.3447427736951509,
+          "bias": -0.008636683205254526
+        },
+        "blend_50_50": {
+          "rows": 2800,
+          "wape": 0.33247047300884186,
+          "mae": 0.33610603763119357,
+          "bias": -0.009951759969974203
+        }
+      }
+    },
+    {
+      "fold": 3,
+      "validation_start": "2024-06-12",
+      "validation_end": "2024-06-25",
+      "validation_rows": 2800,
+      "metrics": {
+        "mean_previous_7_days": {
+          "rows": 2800,
+          "wape": 0.3632949156170358,
+          "mae": 0.3879392857142857,
+          "bias": -0.016720918367346935
+        },
+        "lightgbm": {
+          "rows": 2800,
+          "wape": 0.36215578189814696,
+          "mae": 0.3867228780459091,
+          "bias": -0.026457835833936513
+        },
+        "blend_50_50": {
+          "rows": 2800,
+          "wape": 0.352914192860874,
+          "mae": 0.37685437921515774,
+          "bias": -0.021589377100641727
+        }
+      }
+    }
+  ],
+  "pooled_metrics": {
+    "mean_previous_7_days": {
+      "rows": 8400,
+      "wape": 0.35595667526564423,
+      "mae": 0.3664979931972789,
+      "bias": -0.013408843537414963
+    },
+    "lightgbm": {
+      "rows": 8400,
+      "wape": 0.3562157173086253,
+      "mae": 0.36676470652365606,
+      "bias": -0.02782246191696546
+    },
+    "blend_50_50": {
+      "rows": 8400,
+      "wape": 0.34390658823470305,
+      "mae": 0.3540910543151897,
+      "bias": -0.02061565272719021
+    }
+  }
+}
