@@ -21,3 +21,6 @@ data/
 .vscode/
 .DS_Store
 Thumbs.db
+
+.venv-check/
+.ruff_cache/
