@@ -31,7 +31,7 @@ MODEL_PARAMETERS = {
 class FittedForecaster:
     """Model and category definitions learned from one training partition."""
 
-    model: lgb.LGBMRegressor
+    model: lgb.LGBMRegressor | lgb.Booster
     categories: dict[str, list]
     known_pairs: set[tuple]
     training_end: pd.Timestamp
