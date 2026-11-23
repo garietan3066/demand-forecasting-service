@@ -3,6 +3,7 @@
 import hashlib
 import json
 import subprocess
+import argparse
 from importlib.metadata import version
 from pathlib import Path
 
