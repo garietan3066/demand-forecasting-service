@@ -98,7 +98,13 @@ def evaluate(training, evaluation):
 
 
 def main():
-    report_path = ROOT / "reports/final_evaluation.json"
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--report-path",
+        type=Path,
+        default=ROOT / "reports/final_evaluation.json",
+    )
+    report_path = parser.parse_args().report_path
     predictions_path = ROOT / "data/processed/final_evaluation_predictions.parquet"
 
     if report_path.exists() or predictions_path.exists():
