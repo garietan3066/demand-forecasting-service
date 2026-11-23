@@ -1,7 +1,8 @@
 """Verify serving predictions against the recorded final evaluation."""
 
 import json
-
+import argparse
+from pathlib import Path
 import numpy as np
 import pandas as pd
 
@@ -17,7 +18,11 @@ METHODS = ["mean_previous_7_days", "lightgbm", "blend_50_50"]
 
 
 def main():
-    build_path = ROOT / "reports/model_package_build.json"
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--build-report", type=Path)
+    args = parser.parse_args()
+
+    build_path = args.build_report or ROOT / "reports/model_package_build.json"
     final_path = ROOT / "reports/final_evaluation.json"
     predictions_path = ROOT / "data/processed/final_evaluation_predictions.parquet"
 
@@ -136,7 +141,10 @@ def main():
         ),
     }
 
-    output = ROOT / "reports/model_package_verification.json"
+    if args.build_report is None:
+        output = ROOT / "reports/model_package_verification.json"
+    else:
+        output = package / "verification.json"
     output.write_text(
         json.dumps(report, indent=2, allow_nan=False) + "\n",
         encoding="utf-8",
