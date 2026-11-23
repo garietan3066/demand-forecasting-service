@@ -48,7 +48,7 @@ def verified_shards():
         name = source["file"]
         if Path(name).name != name or "-train-" not in name or not name.endswith(".arrow"):
             raise ValueError("Audit manifest must contain training shard basenames only.")
-        matches = [p for p in cache.rglob(name) if p.parent.name == audit["cache_revision"]]
+        matches = list(cache.rglob(name))
         if len(matches) != 1 or not matches[0].resolve().is_relative_to(cache):
             raise ValueError("Missing, ambiguous, or outside-cache training shard.")
         verify_file(matches[0], source["sha256"])
