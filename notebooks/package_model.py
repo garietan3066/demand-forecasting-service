@@ -28,7 +28,7 @@ def main():
         raise ValueError("Feature contract differs from final evaluation.")
 
     destination = ROOT / "artifacts/releases" / f"blend-v1-{commit[:12]}"
-    build_report_path = ROOT / "reports/model_package_build.json"
+    build_report_path = destination / "build.json"
 
     if destination.exists() or build_report_path.exists():
         raise ValueError("A package or build report already exists; review it first.")
